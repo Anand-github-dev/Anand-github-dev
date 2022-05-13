@@ -1,0 +1,92 @@
+ <style>
+
+.para{
+font-weight:bold;
+}
+.hide{
+display:none;
+}
+ th, td {
+  border:1px solid black;
+}
+</style>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Management</title>
+    <script>
+        function testVariable() {
+            tableHide();
+            var strText = document.getElementById("txtName").value;
+            var strText1 = document.getElementById("txtDes").value;
+			var strText2 = document.getElementById("txtSize").value;
+            
+			document.getElementById('p1').innerHTML += strText + '<br />';
+            document.getElementById('p2').innerHTML += strText1 + '<br />';
+            document.getElementById('p3').innerHTML += strText2 + '<br />';
+
+
+        }
+    </script>
+</head>
+
+<body>
+    
+    <button onclick="newProperty()">Add Property</button>
+
+    <form class="hide" id="myForm" name="myForm">
+
+        <p class="para">Property Name - </p>
+
+        <input type="text" name="name" id="txtName" placeholder="name"><br>
+
+        <p class="para">Property Description - </p>
+
+        <input type="text" name="des" id="txtDes" placeholder="description"><br>
+
+        <p class="para">Property Size - </p>
+
+        <input type="text" name="size" id="txtSize" placeholder="size"><br>
+
+        <input type="button" value="Submit" id="btnSubmit" onclick="testVariable()">
+    </form>
+	<table class="hide" id="myTable" style="width:100%">
+  <tr>
+    <th>Property Name</th>
+    <th>Property Description</th>
+    <th>Property Size</th>
+  </tr>
+  <tr style="text-align:center;">
+    <td><p id="p1"><br></p></td>
+    <td><p id="p2"><br></p></td>
+    <td><p id="p3"><br></p></td>
+	
+  </tr>
+</table>
+</body>
+
+</html>
+
+<script>
+function newProperty(){
+  var x = document.getElementById("myForm");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function tableHide(){
+  var x = document.getElementById("myTable");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+
